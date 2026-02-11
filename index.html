@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeStrands | Premium Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-wrapper">
+            <div class="logo-icon">LS</div>
+            <div class="logo-text">LUXE<span>STRANDS</span></div>
+        </div>
+        
+        <div class="nav-center">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBar" placeholder="Search collection...">
+            </div>
+            <button id="filterBtn" class="filter-trigger">
+                <i class="fas fa-sliders"></i>
+                <span>Refine</span>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <div class="cart-trigger" id="openCart">
+                <i class="fa-solid fa-bag-shopping gold-icon"></i>
+                <span id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="premium-hero">
+        <div class="hero-content">
+            <span class="badge">New Arrival 2026</span>
+            <h1>The Art of Adornment</h1>
+            <p>Discover handcrafted hair accessories designed for the modern woman.</p>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="grid-header">
+            <h2 id="currentCategory">All Accessories</h2>
+            <div class="sort-info" id="itemCount">Loading collection...</div>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <div class="modal" id="filterModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Filter Options</h3>
+                <button id="closeFilter" class="close-x">&times;</button>
+            </div>
+            <div class="filter-group">
+                <label>Category</label>
+                <div class="category-tags">
+                    <button class="tag active" data-cat="all">All</button>
+                    <button class="tag" data-cat="Clips">Clips</button>
+                    <button class="tag" data-cat="Bands">Bands</button>
+                    <button class="tag" data-cat="Pins">Pins</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label>Max Budget: <span class="gold-text">$<span id="priceVal">100</span></span></label>
+                <input type="range" id="priceRange" min="5" max="100" value="100">
+            </div>
+            <button class="btn-apply" id="applyFilter">Apply Filters</button>
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Selection</h2>
+            <button id="closeCart" class="close-btn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsList"></div>
+        <div class="cart-footer">
+            <div class="total-section">
+                <span>Subtotal</span>
+                <span id="cartTotal" class="gold-text">$0.00</span>
+            </div>
+            <button class="pay-button" id="payNowBtn">
+                <span>Secure Checkout</span>
+                <i class="fas fa-lock"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="payment-overlay" id="successOverlay">
+        <div class="payment-card">
+            <div class="success-anim">
+                <div class="circle"></div>
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Order Confirmed</h2>
+            <p>Thank you for choosing LuxeStrands. Your elegant selection is being prepared.</p>
+            <div class="order-total">Total Paid: <span id="finalPaid"></span></div>
+            <button class="btn-primary-return" onclick="location.reload()">Return to Shop</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
