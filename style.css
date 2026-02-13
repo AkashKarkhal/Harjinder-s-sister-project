@@ -114,3 +114,22 @@ button { appearance: none; border: none; background: none; cursor: pointer; tran
         height: 30px;   /* Makes the logo slightly smaller on phones */
     }
 }
+.pay-button{
+    background-color: #ff4d6d;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 10px;
+}
+#closeFilter{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+#closeCart{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
