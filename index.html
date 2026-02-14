@@ -1,143 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LuxeStrands | Premium Collection</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liceria Accessories | Premium Hairwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
     <nav class="navbar">
-      <div class="logo-wrapper">
-<img src="logo.png" alt="LuxeStrands Logo" class="custom-logo" />
-        <div class="logo-text">LICERIA<span>ACCESORIES</span></div>
-      </div>
-
-      <div class="nav-center">
-        <div class="search-wrapper">
-          <i class="fas fa-search"></i>
-          <input
-            type="text"
-            id="searchBar"
-            placeholder="Search silk scrunchies, clips..."
-          />
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="Liceria Logo" class="custom-logo">
+            <div class="logo-text">LICERIA<span>ACCESORIES</span></div>
         </div>
-        <button id="filterBtn" class="filter-trigger">
-          <i class="fas fa-sliders"></i>
-          <span>Refine</span>
-        </button>
-      </div>
-
-      <div class="nav-right">
-        <div class="cart-trigger" id="openCart">
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span id="cartCount">0</span>
+        
+        <div class="nav-center">
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBar" placeholder="Search silk scrunchies, claws...">
+            </div>
+            <button id="filterBtn" class="filter-trigger">
+                <i class="fas fa-sliders"></i>
+                <span>Refine</span>
+            </button>
         </div>
-      </div>
+
+        <div class="nav-right">
+            <div class="cart-trigger" id="openCart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cartCount">0</span>
+            </div>
+        </div>
     </nav>
 
     <header class="premium-hero">
-      <div class="hero-content">
-        <span class="badge">Collection 2026</span>
-        <h1>Elegance in Every Strand</h1>
-        <p>Hand-picked accessories for your crowning glory.</p>
-      </div>
+        <div class="hero-content">
+            <span class="badge">Blush Collection 2026</span>
+            <h1>Elegance in Every Strand</h1>
+            <p>Hand-picked Indian hair accessories for your crowning glory.</p>
+        </div>
     </header>
 
     <main class="main-container">
-      <div class="grid-header">
-        <h2 id="currentCategory">Premium Items</h2>
-        <div class="sort-info" id="itemCount">Connecting to vault...</div>
-      </div>
-      <div class="product-grid" id="productGrid"></div>
+        <div class="grid-header">
+            <h2 id="currentCategory">Premium Hairwear</h2>
+            <div class="sort-info" id="itemCount">Connecting to vault...</div>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
     </main>
 
     <div class="modal" id="filterModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Refine</h3>
-          <button id="closeFilter" class="close-x">&times;</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Refine</h3>
+                <button id="closeFilter" class="close-x">&times;</button>
+            </div>
+            <div class="filter-group">
+                <label>Category</label>
+                <div class="category-tags">
+                    <button class="tag active" data-cat="all">All</button>
+                    <button class="tag" data-cat="Claws">Claws</button>
+                    <button class="tag" data-cat="Bands">Bands</button>
+                    <button class="tag" data-cat="Pins">Pins</button>
+                    <button class="tag" data-cat="Scrunchies">Scrunchies</button>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label>Max Price: <span class="pink-text">₹<span id="priceVal">1000</span></span></label>
+                <input type="range" id="priceRange" min="100" max="1000" step="50" value="1000">
+            </div>
+            <button class="btn-apply" id="applyFilter">Apply Filters</button>
         </div>
-        <div class="filter-group">
-          <label>Category</label>
-          <div class="category-tags">
-            <button class="tag active" data-cat="all">All</button>
-            <button class="tag" data-cat="Clips">Claws</button>
-            <button class="tag" data-cat="Bands">Bands</button>
-            <button class="tag" data-cat="Pins">Pins</button>
-          </div>
-        </div>
-        <div class="filter-group">
-          <label
-            >Max Price:
-            <span class="pink-text">$<span id="priceVal">50</span></span></label
-          >
-          <input type="range" id="priceRange" min="1" max="50" value="50" />
-        </div>
-        <button class="btn-apply" id="applyFilter">Apply Filters</button>
-      </div>
     </div>
 
     <div class="cart-sidebar" id="cartSidebar">
-      <div class="cart-header">
-        <h2>Your Selection</h2>
-        <button id="closeCart" class="close-btn">&times;</button>
-      </div>
-      <div class="cart-items" id="cartItemsList"></div>
-      <div class="cart-footer">
-        <div class="total-section">
-          <span>Subtotal</span>
-          <span id="cartTotal">$0.00</span>
+        <div class="cart-header">
+            <h2>Your Selection</h2>
+            <button id="closeCart" class="close-btn">&times;</button>
         </div>
-        <button class="pay-button" id="payNowBtn">
-          Secure Checkout <i class="fas fa-lock"></i>
-        </button>
-      </div>
+        <div class="cart-items" id="cartItemsList"></div>
+        <div class="cart-footer">
+            <div class="total-section">
+                <span>Subtotal</span>
+                <span id="cartTotal">₹0.00</span>
+            </div>
+            <button class="pay-button" id="payNowBtn">Secure Checkout <i class="fas fa-lock"></i></button>
+        </div>
     </div>
 
     <footer class="main-footer">
-      <div class="footer-container">
-        <div class="footer-about">
-          <h3>LICERIA <span>ACCESORIES</span></h3>
-          <p>
-            Founded in 2026, we provide high-quality, ethically sourced hair
-            accessories for the modern woman.
-          </p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
-          </div>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>LICERIA <span>ACCESORIES</span></h3>
+                <p>Premium, ethically sourced hair accessories designed for the modern woman.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Join The Circle</h4>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email Address">
+                    <button class="btn-newsletter">Join</button>
+                </div>
+            </div>
         </div>
-        <div class="footer-newsletter">
-          <h4>Join The Circle</h4>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Email Address" />
-            <button class="btn-newsletter">Join</button>
-          </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LICERIA-ACCESORIES. All Rights Reserved.</p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 LICERIA-ACCESORIES. All Rights Reserved.</p>
-      </div>
     </footer>
 
     <div class="payment-overlay" id="successOverlay">
-      <div class="payment-card">
-        <div class="success-anim"><i class="fas fa-heart"></i></div>
-        <h2>Order Confirmed</h2>
-        <div class="order-total">Total: <span id="finalPaid"></span></div>
-        <button class="btn-apply" onclick="location.reload()">Return</button>
-      </div>
+        <div class="payment-card">
+            <div class="success-anim"><i class="fas fa-heart"></i></div>
+            <h2>Order Confirmed</h2>
+            <div class="order-total">Paid: <span id="finalPaid"></span></div>
+            <button class="btn-apply" onclick="location.reload()">Back to Shop</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
