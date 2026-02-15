@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liceria Accessories | Premium Hairwear</title>
+    <title>Liceria Accessories | Premium Collection</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
         <div class="nav-center">
             <div class="search-wrapper">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchBar" placeholder="Search silk scrunchies, claws...">
+                <input type="text" id="searchBar" placeholder="Search Hair Clips, Hair Claws and Hair Rubber Band...">
             </div>
             <button id="filterBtn" class="filter-trigger">
                 <i class="fas fa-sliders"></i>
@@ -37,15 +37,14 @@
 
     <header class="premium-hero">
         <div class="hero-content">
-            <span class="badge">Blush Collection 2026</span>
+            <span class="badge">Collection 2026</span>
             <h1>Elegance in Every Strand</h1>
-            <p>Hand-picked Indian hair accessories for your crowning glory.</p>
+            <p>Hand-picked accessories for your crowning glory.</p>
         </div>
     </header>
 
     <main class="main-container">
         <div class="grid-header">
-            <h2 id="currentCategory">Premium Hairwear</h2>
             <div class="sort-info" id="itemCount">Connecting to vault...</div>
         </div>
         <div class="product-grid" id="productGrid"></div>
@@ -60,16 +59,15 @@
             <div class="filter-group">
                 <label>Category</label>
                 <div class="category-tags">
-                    <button class="tag active" data-cat="all">All</button>
-                    <button class="tag" data-cat="Claws">Claws</button>
-                    <button class="tag" data-cat="Bands">Bands</button>
-                    <button class="tag" data-cat="Pins">Pins</button>
-                    <button class="tag" data-cat="Scrunchies">Scrunchies</button>
+                    <button class="tag active" data-cat="all">All Items</button>
+                    <button class="tag" data-cat="Claws">Hair Claws</button>
+                    <button class="tag" data-cat="Scrunchies">Rubber Band</button>
+                    <button class="tag" data-cat="Pins">Hair Pins</button>
                 </div>
             </div>
             <div class="filter-group">
                 <label>Max Price: <span class="pink-text">₹<span id="priceVal">1000</span></span></label>
-                <input type="range" id="priceRange" min="100" max="1000" step="50" value="1000">
+                <input type="range" id="priceRange" min="50" max="1000" step="50" value="1000">
             </div>
             <button class="btn-apply" id="applyFilter">Apply Filters</button>
         </div>
@@ -92,24 +90,47 @@
 
     <footer class="main-footer">
         <div class="footer-container">
-            <div class="footer-about">
-                <h3>LICERIA <span>ACCESORIES</span></h3>
-                <p>Premium, ethically sourced hair accessories designed for the modern woman.</p>
+            <div class="footer-column footer-about">
+                <div class="footer-logo">
+                    <h3>LICERIA <span>ACCESORIES</span></h3>
+                </div>
+                <p>Curating the finest Indian hair accessories since 2026. We believe every strand deserves a touch of elegance and luxury.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
-            <div class="footer-newsletter">
-                <h4>Join The Circle</h4>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Join the Circle</h4>
+                <p class="newsletter-text">Subscribe to receive updates, access to exclusive deals, and more.</p>
                 <div class="newsletter-form">
-                    <input type="email" placeholder="Email Address">
-                    <button class="btn-newsletter">Join</button>
+                    <input type="email" placeholder="Enter your email" aria-label="Email Address">
+                    <button class="btn-newsletter" type="button">Subscribe</button>
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 LICERIA-ACCESORIES. All Rights Reserved.</p>
+            <div class="footer-bottom-content">
+                <p>&copy; 2026 LICERIA-ACCESORIES. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -118,7 +139,7 @@
             <div class="success-anim"><i class="fas fa-heart"></i></div>
             <h2>Order Confirmed</h2>
             <div class="order-total">Paid: <span id="finalPaid"></span></div>
-            <button class="btn-apply" onclick="location.reload()">Back to Shop</button>
+            <button class="btn-apply" onclick="location.reload()">Return</button>
         </div>
     </div>
 
